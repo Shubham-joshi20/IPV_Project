@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <style>
+        .Top {
+             background: rgb(55, 153, 182);
+             border-radius: 15px;
+             width: 50%; /* Set a width */
+             margin: 0 auto; /* Center horizontally */
+             padding: 20px; /* Add padding */
+        }
+        body {
+             background-color: rgb(133, 212, 238);
+             margin: 0; /* Remove default margin */
+             font-family: Arial, sans-serif; /* Set font */
+        }
+        button{
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <div class="Top">
+        <h1 style="text-align: center;">Contrast Shifter</h1>
+    </div>
+    <h1>Upload an Image</h1>
+    <input type="file" id="imageInput" accept="image/*">
+    <button onclick="uploadImage()">Upload</button>
+
+    <script>
+        function uploadImage() {
+            const input = document.getElementById('imageInput');
+            const file = input.files[0];
+            const formData = new FormData();
+            formData.append('image', file);
+
+            fetch('/process_image', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
+

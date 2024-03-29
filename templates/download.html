@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Download Image</title>
+    <style>
+        .Top {
+            background: rgb(55, 153, 182);
+            border-radius: 15px;
+            width: 50%; /* Set a width */
+            margin: 0 auto; /* Center horizontally */
+            padding: 20px; /* Add padding */
+        }
+        body {
+            background-color: rgb(133, 212, 238);
+            margin: 0; /* Remove default margin */
+            font-family: Arial, sans-serif; /* Set font */
+        }
+        button {
+            background-color: antiquewhite;
+        }
+        h1{
+            text-align: center;
+            padding: 20px;
+        }
+        form{
+            text-align: center;
+        }
+        footer {
+            background-color: rgb(55, 153, 182);
+            border-radius: 15px;
+            width: 50%; /* Set a width */
+            margin: 20px auto 0; /* Center horizontally */
+            padding: 20px; /* Add padding */
+            text-align: center; /* Center the text */
+            color: white;
+       }
+    </style>
+</head>
+<body>
+    <div class="Top">
+        <h1 style="text-align: center;">Contrast Shifter</h1>
+    </div>
+    <h1>Adjusted Image</h1>
+    <img style="display: block;margin-left: 550px;margin-right: auto;width: 25%;" src="data:image/jpeg;base64,{{ image_data }}" alt="Adjusted Image">
+    <br><br><br>
+    <form method="post" action="/download_image">
+        <input type="hidden" name="image_data" value="{{ image_data }}">
+        <button type="submit">Download Image</button>
+    </form>
+    <footer>
+        <p>Contact: Sjboss@gmail.com</p>
+        <p>Copyright &copy; 2024</p>
+        <p>Follow us on <a href="https://www.facebook.com/">Facebook</a> | <a href="https://www.linkedin.com/">LinkedIn</a></p>
+    </footer>
+</body>
+</html>
