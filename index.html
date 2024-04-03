@@ -3,17 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Example</title>
+    <title>Home</title>
+    <style>
+       .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+       }
+       .Top {
+            background: rgb(55, 153, 182);
+            border-radius: 15px 15px 0 0; /* Rounded corners at the top */
+            width: 50%; /* Set a width */
+            margin: 0 auto; /* Center horizontally */
+            padding: 20px; /* Add padding */
+       }
+       .content {
+            flex-grow: 1;
+            background-color: rgb(133, 212, 238); /* Set background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 0 0 15px 15px; /* Rounded corners at the bottom */
+            overflow: hidden; /* Hide overflow content */
+            margin: 0 auto; /* Center horizontally */
+            width: 50%; /* Set a width */
+            padding: 20px; /* Add padding */
+       }
+       footer {
+            background-color: rgb(55, 153, 182);
+            border-radius: 15px;
+            width: 50%; /* Set a width */
+            margin: 20px auto 0; /* Center horizontally */
+            padding: 20px; /* Add padding */
+            text-align: center; /* Center the text */
+            color: white;
+       }
+       h2, button, img {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+       }
+       button {
+            padding: 10px 20px;
+            background-color: rgb(255, 153, 0);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+       }
+       a {
+            color: black;
+       }
+    </style>
 </head>
+
 <body>
-    <h1>Submit Form</h1>
-    <form action="/process_form" method="post">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name"><br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br>
-        <br><br>
-        <input type="submit" value="Submit">
-    </form>
+    <div class="container">
+        <div class="Top">
+            <h1 style="text-align: center;">Contrast Shifter</h1>
+            <nav>
+                <p>Menu OLD_images</p>
+            </nav>
+        </div>
+        <div class="content">
+            <h2>We Give you a Better version of your Image</h2>
+            <button><a href="/input.html" target="_blank">Image enhancement</a></button>
+        </div>
+        <footer>
+            <p>Contact: Sjboss@gmail.com</p>
+            <p>Copyright &copy; 2024</p>
+            <p>Follow us on <a href="https://www.facebook.com/">Facebook</a> | <a href="https://www.linkedin.com/">LinkedIn</a></p>
+        </footer>
+    </div>
 </body>
 </html>
