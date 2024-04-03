@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <style>
+        .Top {
+            background: rgb(55, 153, 182);
+            border-radius: 15px;
+            width: 50%; /* Set a width */
+            margin: 0 auto; /* Center horizontally */
+            padding: 20px; /* Add padding */
+        }
+        body {
+            background-color: rgb(133, 212, 238);
+            margin: 0; /* Remove default margin */
+            font-family: Arial, sans-serif; /* Set font */
+        }
+        button {
+            background-color: antiquewhite;
+        }
+        h1{
+            text-align: center;
+            padding: 20px;
+        }
+        form{
+            text-align: center;
+        }
+        footer {
+            background-color: rgb(55, 153, 182);
+            border-radius: 15px;
+            width: 50%; /* Set a width */
+            margin: 20px auto 0; /* Center horizontally */
+            padding: 20px; /* Add padding */
+            text-align: center; /* Center the text */
+            color: white;
+       }
+    </style>
+</head>
+<body>
+    <div class="Top">
+        <h1 style="text-align: center;">Contrast Shifter</h1>
+    </div>
+    <h1>Upload an Image</h1>
+    <form action="/sharp_image" method="POST" enctype="multipart/form-data" ">
+        <input type="file" id="imageInput" name="image" accept="image/*">
+        <button type="submit" onclick="Check_in()">Upload</button>
+    </form>
+    <br><br><br><br><br><br><br><br>
+    <footer>
+        <p>Contact: Sjboss@gmail.com</p>
+        <p>Copyright &copy; 2024</p>
+        <p>Follow us on <a href="https://www.facebook.com/">Facebook</a> | <a href="https://www.linkedin.com/">LinkedIn</a></p>
+    </footer>
+    <script>
+        // Remove the uploadImage() function as it's not needed anymore
+        function Check_in()
+        {
+            var fileInput = document.getElementById('imageInput');
+            if (fileInput.files.length > 0) {
+                // File is selected, you can proceed with upload or processing
+                document.getElementById('uploadForm').submit(); // For submitting the form
+                // Alternatively, you can call a function to handle the file upload or processing
+                // handleUpload(fileInput.files[0]);
+            } else {
+                // No file selected, show an error message or take appropriate action
+                alert('Please select a file.');
+        }
+    }
+    </script>
+</body>
+</html>
